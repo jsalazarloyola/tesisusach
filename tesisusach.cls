@@ -508,8 +508,12 @@
     \fi
 }
 
+%================================================================
+% FRONTMATTER
+%================================================================
 %------Página de dedicatoria
 \providecommand{\dedicatoriaSimple}[1]{
+	\clearpage
 	\thispagestyle{empty}
 	\vspace*{0.2\textheight}
 	\begin{flushright}
@@ -540,6 +544,9 @@
 }
 {\clearpage}
 
+%================================================================
+% ABSTRACT
+%================================================================
 %------Página de resumen (castellano)
 % Caja para las palabras claves en castellano
 \newsavebox{\eskw}
