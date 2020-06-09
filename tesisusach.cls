@@ -263,9 +263,9 @@
 \renewcommand{\cfttabfont}{Tabla }
 
 %Se cambia el tamaño del título de la lista de figuras, tablas e índice de contenido dejándolos igual que los títulos normales
-\renewcommand\cftloftitlefont{\Large\bf}
-\renewcommand\cftlottitlefont{\Large\bf}
-\renewcommand\cfttoctitlefont{\Large\bf}
+\renewcommand\cftloftitlefont{\Large\bfseries}
+\renewcommand\cftlottitlefont{\Large\bfseries}
+\renewcommand\cfttoctitlefont{\Large\bfseries}
 
 %--------pagina en blanco
 \newcommand{\paginaenblanco}{\newpage{\pagestyle{empty}\cleardoublepage\null}}
