@@ -522,17 +522,13 @@
 	\clearpage
 }
 
+% Formato estándar como el de agradecimientos, supongo que esto
+% es a gusto de cada quien.
 \newenvironment{pagDedicatoria}[1]
 {
-    \thispagestyle{empty}
-    \chapter*{\centerline{Dedicatoria}}
-    \addcontentsline{toc}{chapter}{Dedicatoria}
-    
-    \vspace*{18cm}\par
-    \hspace*{5cm}
-    \begin{flushright}
-    \textit{#1}
-    \end{flushright}
+	\thispagestyle{empty}
+	\chapter*{\centerline{Dedicatoria}}
+	\addcontentsline{toc}{chapter}{Dedicatoria}
 }{}
 
 %------Página de agradecimientos

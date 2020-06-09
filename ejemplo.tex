@@ -12,9 +12,12 @@
 \begin{document}
 	\maketitle
 	
-	\tableofcontents
-	
+	% ----------------------------------------------------------
+	% ----------- PRIMERA PARTE --------------------------------
+	% Temas preliminares: abstract, agradecimientos, 
+	% dedicatorias...
 	\frontmatter
+	
 	\begin{resumenEs}
 		\lipsum[1]	
 	\end{resumenEs}
@@ -28,8 +31,21 @@
 	\begin{agradecimiento}
 		\lipsum[2-3]
 	\end{agradecimiento}
-	
+
+	% De acuerdo al formato, lo preliminar termina con las tablas
+	% de contenido.	
+	\tableofcontents
+	\newpage
+	%% Indice de tablas
+	\listoftables
+	\newpage
+	%% Indice de figuras
+	\listoffigures
+	\newpage
+
+	% ----------------------------------------------------------
+	% ----------- SEGUNDA PARTE --------------------------------
+	% Los capítulos solo están de relleno.
 	\mainmatter
 	
-
 \end{document}
