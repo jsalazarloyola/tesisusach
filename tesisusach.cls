@@ -509,7 +509,7 @@
 }
 
 %------Página de dedicatoria
-\newcommand{\dedicatoriaSimple}[1]{
+\providecommand{\dedicatoriaSimple}[1]{
 	\thispagestyle{empty}
 	\vspace*{0.2\textheight}
 	\begin{flushright}
@@ -541,33 +541,40 @@
 {\clearpage}
 
 %------Página de resumen (castellano)
-\newcommand{\KeywordsES}[1]
-{
-    \par\noindent
-    {\bf Palabras Claves\/}: #1
+% Caja para las palabras claves en castellano
+\newsavebox{\eskw}
+% Guardado de palabras clave
+\providecommand{\keywordsEs}[1]{
+	\savebox{\eskw}{#1}
 }
-\newcommand{\resumenCastellano}[1]
+\newenvironment{resumenEs}
 {
-    \chapter*{\centerline{Resumen}}
-    \addcontentsline{toc}{chapter}{Resumen}
-#1
+	\chapter*{\centerline{Resumen}}
+	\addcontentsline{toc}{chapter}{Resumen}
+}
+{
+	% Fuente más pequeña, en nueva línea
+	% Las palabras clave van con el abstract
+	\small\par
+	\textbf{Palabras Claves: } \usebox{\eskw}
 }
 
 %------Página de abstract (ingles)
-\newcommand{\KeywordsEN}[1]
-{
-    %\thispagestyle{empty}
-    \par\noindent
-    {\bf Keywords\/}: #1
+% Caja para las palabras claves en inglés
+\newsavebox{\enkw}
+% Guardado de palabras clave
+\providecommand{\keywordsEn}[1]{
+	\savebox{\enkw}{#1}
 }
-\newcommand{\resumenIngles}[1]
+\newenvironment{resumenEn}
 {
-    %\begin{center}
-    %    {\Large\bf ABSTRACT}
-    %\end{center}
-    \chapter*{\centerline{Abstract}}
-    \addcontentsline{toc}{chapter}{Abstract}
-#1
+	\chapter*{\centerline{Abstract}}
+	\addcontentsline{toc}{chapter}{Abstract}
+}
+{	
+	% Fuente más pequeña, en nueva línea
+	\small\par
+	\textbf{Keywords: } \usebox{\enkw}
 }
 
 %------Página de glosario
