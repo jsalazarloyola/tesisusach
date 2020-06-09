@@ -1,14 +1,24 @@
 \documentclass{tesisusach}
 
+\usepackage{lipsum}
+
 \title{Test title}
 \author{Fulano de Tal}
 \date{\today}
 
 \begin{document}
-\maketitle
+	\maketitle
+	
+	\tableofcontents
+	
+	\frontmatter
+	\dedicatoriaSimple{A Lilith, señora de los desposeídos}
+	
+	\begin{agradecimiento}
+		\lipsum[1]
+	\end{agradecimiento}
+	
+	\mainmatter
+	
 
-\frontmatter
-\chapter{Dummy chapter}
-
-Lorem ipsum
 \end{document}

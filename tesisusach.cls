@@ -1,11 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 
-% Estilo original para tesis de Victor Munoz
+% Estilo para tesis siguiendo norma Usach
 % Agradecimiento por aportes a:
 % Emir Muñoz (código original)
 % Rodrigo Campos
 % Hugo Meneses
-\ProvidesClass{tesiusach}[2020/06/09 v1.4 Estilo para tesis (Javier Salazar Loyola)]
+% Víctor Flores
+\ProvidesClass{tesisusach}[2020/06/09 v1.4 Estilo para tesis (Javier Salazar Loyola)]
 
 \newif\ifkeys\keysfalse
 \newif\iftxfonts\txfontsfalse
@@ -508,9 +509,18 @@
 }
 
 %------Página de dedicatoria
-\newenvironment{dedicatoria}[1]
+\newcommand{\dedicatoriaSimple}[1]{
+	\thispagestyle{empty}
+	\vspace*{0.2\textheight}
+	\begin{flushright}
+		\textit{#1}
+	\end{flushright}
+	\clearpage
+}
+
+\newenvironment{pagDedicatoria}[1]
 {
-    %\thispagestyle{empty}
+    \thispagestyle{empty}
     \chapter*{\centerline{Dedicatoria}}
     \addcontentsline{toc}{chapter}{Dedicatoria}
     
@@ -524,17 +534,15 @@
 %------Página de agradecimientos
 \newenvironment{agradecimiento}
 {
-    %\thispagestyle{empty}
+    \thispagestyle{empty}
     \chapter*{\centerline{Agradecimientos}}
     \addcontentsline{toc}{chapter}{Agradecimientos}
-    %\begin{center}
-    %    {\Large\bf AGRADECIMIENTOS}
-    %\end{center}
-}{}
+}
+{\clearpage}
+
 %------Página de resumen (castellano)
 \newcommand{\KeywordsES}[1]
 {
-    %\thispagestyle{empty}
     \par\noindent
     {\bf Palabras Claves\/}: #1
 }
