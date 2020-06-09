@@ -166,15 +166,16 @@
 %================================================================
 % Definición del estilo del header y footer
 %================================================================
-\lhead{\chaptername \thechapter. \chaptermark}
-\chead{}
+\fancyhf{}
 \if@twoside
 	%Numeración al lado derecho de la página en páginas del lado derecho (ajustado para twoside)
+	\fancyhead[LE,RO]{\textsl{\leftmark}}
 	\fancyfoot[LE,RO]{\thepage}
 \else
+	\fancyhead[L]{\textsl{\leftmark}}
 	\fancyfoot[R]{\thepage} 
 \fi
-\cfoot{}
+%\cfoot{}
 
 %Hace que la primera página de cada capítulo no tenga el header por defecto y que en el footer el N° de página no esté al centro
 \fancypagestyle{plain}{%
@@ -187,6 +188,8 @@
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
+
+\pagestyle{fancy}
 
 % Cambios al default de spanish
 % Para desactivar el atajo ~N para la Ñ
