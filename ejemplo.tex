@@ -9,6 +9,8 @@
 \keywordsEs{Prueba, Tesis}
 \keywordsEn{Test, Thesis}
 
+\addbibresource{caps/referencias.bib}
+
 \begin{document}
 	\maketitle
 	
@@ -49,4 +51,16 @@
 	\mainmatter
 	\include{caps/01-intro}
 	\include{caps/02-problem}
+	\include{caps/03-conclusions}
+	
+	% ----------------------------------------------------------
+	% ----------- TERCERA PARTE --------------------------------
+	% ### Bibliografía de este documento ###
+	% La opción heading la coloca en la tabla de contenidos
+	\printbibliography[heading=bibintoc]
+	
+	\appendix
+	%\addappheadtotoc
+	\include{appendix/01-addendum}
+
 \end{document}

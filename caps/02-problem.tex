@@ -1,6 +1,6 @@
 % Capítulo de ejemplo para colocar descripción del problema
 \chapter{Problema}
-\lipsum[11-15]
+\lipsum[11-15] \cite[Ver][pág.1250]{beile2007ilas}
 \begin{itemize}
 \item \lipsum[1][1]
 \item \lipsum[1][2]
@@ -9,17 +9,45 @@
 
 \lipsum[16-17]
 \begin{enumerate}
-\item \lipsum[2][1]
+\item \lipsum[2][1] \parencite[Ver][]{boh2016development}
 \item \lipsum[2][2]
-\item \lipsum[2][3]
+\item \lipsum[2][3] Ver \ref{fig:dummyfigure1}.
 \end{enumerate}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|} \hline
+        S & A & T & O & R\\ \hline
+        A & R & E & P & O\\ \hline
+        T & E & N & E & T\\ \hline
+        O & P & E & R & A\\ \hline
+        R & O & T & A & S\\ \hline
+    \end{tabular}
+    
+    \caption{Dummy figure}
+    \label{fig:dummyfigure1}
+\end{figure}
 
 \lipsum[18]
 \begin{enumerate}[i)]
 \item \lipsum[3][1]
-\item \lipsum[3][2]
-\item \lipsum[3][3]
+\item \lipsum[3][2] Ver \ref{fig:dummyfigure2}.
+\item \lipsum[3][3] \parencite[][pág. 75]{bruce1997seven}
 \end{enumerate}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|} \hline
+        S & A & T & O & R\\ \hline
+        A & R & E & P & O\\ \hline
+        T & E & N & E & T\\ \hline
+        O & P & E & R & A\\ \hline
+        R & O & T & A & S\\ \hline
+    \end{tabular}
+    
+    \caption{Dummy figure}
+    \label{fig:dummyfigure2}
+\end{figure}
 
 \lipsum[19-22]
 \begin{enumerate}[(I)]
@@ -27,3 +55,51 @@
 \item \lipsum[4][2]
 \item \lipsum[4][3]
 \end{enumerate}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|} \hline
+        S & A & T & O & R\\ \hline
+        A & R & E & P & O\\ \hline
+        T & E & N & E & T\\ \hline
+        O & P & E & R & A\\ \hline
+        R & O & T & A & S\\ \hline
+    \end{tabular}
+    
+    \caption{Dummy table}
+    \label{tab:dummytable1}
+\end{table}
+
+\lipsum[23-26]
+
+\begin{table}[hbtp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|} \hline
+        S & A & T & O & R\\ \hline
+        A & R & E & P & O\\ \hline
+        T & E & N & E & T\\ \hline
+        O & P & E & R & A\\ \hline
+        R & O & T & A & S\\ \hline
+    \end{tabular}
+    
+    \caption[Dummy table de nombre largo]{Dummy table con un nombre ridículamente largo, porque a veces estas cosas ocurren y es necesario tratar estos casos, para poder dar un buen ejemplo}
+    \label{tab:dummytable2}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|} \hline
+        S & A & T & O & R\\ \hline
+        A & R & E & P & O\\ \hline
+        T & E & N & E & T\\ \hline
+        O & P & E & R & A\\ \hline
+        R & O & T & A & S\\ \hline
+    \end{tabular}
+    
+    \caption{Otra dummy table \parencite{cabrera2015evolucion}.}
+    \label{tab:dummytable3}
+\end{table}
+
+\lipsum[27-30]
+
+Probando diferentes comandos para referenciar: ver \rangeref{tab:dummytable1}{tab:dummytable3} o la  \Fig{fig:dummyfigure2}.

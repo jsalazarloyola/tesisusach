@@ -274,13 +274,7 @@
 % Referenciaciones
 %================================================================
 %--------Referenciacion en la forma: 1-5
-\newcommand{\lref}[2]{\ref{#1}--\ref{#2}}
-
-%--------Referenciacion en la forma:  (1)
-\newcommand{\cref}[1]{(\ref{#1})}
-
-%--------Referenciacion en la forma:  (1)-(5)
-\newcommand{\clref}[2]{(\ref{#1})--(\ref{#2})}
+\newcommand{\rangeref}[2]{\ref{#1}--\ref{#2}}
 
 %--------Abreviaciones
 \newcommand{\Capt}[1]{Cap.\ \ref{#1}}
