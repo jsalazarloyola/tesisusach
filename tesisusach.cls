@@ -61,61 +61,39 @@
 \setlength{\footskip}{20pt} %20
 
 %--------Idioma
-\RequirePackage[spanish]{babel}
+% Español y escribiendo "tabla", en vez de "cuadro"
+\RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 
 %--------Configuracion de header y footer
 \RequirePackage{fancybox}
 \RequirePackage{fancyhdr}
-\RequirePackage{float}
 
 %--------Simbolos y fuentes
 \RequirePackage{amstext}
-\RequirePackage{amssymb,latexsym}
+\RequirePackage{amssymb}
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 
-%-------Entornos, figuras
+%-------Entornos
 \RequirePackage{enumerate}
 
-%-------Imagenes GNU Plot
+%-------Imagenes
 \RequirePackage{graphicx}
 
 %-------Referencias
 \RequirePackage{hyperref}
-% Paquete para colocar el link al inicio del flotante
+% Paquete para colocar el link al inicio del flotante, en lugar de al final
 \RequirePackage[all]{hypcap}
 
 %--------Tablas
 \RequirePackage{multirow} % Multiples filas en Tablas
-\RequirePackage{array}
-\RequirePackage[font=small]{caption}
-\RequirePackage{subcaption}
-\captionsetup[table]{position=top,belowskip=4pt,aboveskip=4pt}
-\RequirePackage{longtable} % Para cortar tablas grandes
-\RequirePackage{lscape}
 
 %--------Apendice y tabla de contenidos
 \RequirePackage{appendix}
 \RequirePackage[nottoc]{tocbibind}
-
-%--------Algoritmos
-\RequirePackage[ruled,algochapter,linesnumbered]{algorithm2e}
-\renewcommand{\algorithmcfname}{Algoritmo}%
-\RequirePackage{algorithmic}
-\setlength{\algomargin}{1em}
-\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
-\renewcommand{\algorithmicensure}{\textbf{Salida:}}
-\renewcommand{\algorithmiccomment}[1]{//#1}
-
-%--------Configuracion indice de algoritmos
-\renewcommand{\listofalgorithms}{
-    \begingroup
-    \tocfile{Índice de algoritmos}{loa}
-    \endgroup
-}
 
 %Soporte para tablas con color
 \RequirePackage[table,xcdraw]{xcolor}
@@ -136,9 +114,10 @@
 	bibliography={Referencias},
 }
 
-
-\setcounter{secnumdepth}{2} %Mostrar numeración en las subsecciones (subsubsecciones no llevan números)
-\setcounter{tocdepth}{3} %Mostrar las subsubsecciones en el índice
+%Mostrar numeración en las subsecciones (subsubsecciones no llevan números)
+\setcounter{secnumdepth}{2}
+%Mostrar las subsubsecciones en el índice
+\setcounter{tocdepth}{3}
 
 %================================================================
 % Notaciones Generales
@@ -153,16 +132,17 @@
 %================================================================
 \fancyhf{}
 \if@twoside
-	%Numeración al lado derecho de la página en páginas del lado derecho (ajustado para twoside)
+	% Numeración al lado derecho de la página en páginas del lado derecho
+	% (ajustado para twoside)
 	\fancyhead[LE,RO]{\textsl{\leftmark}}
 	\fancyfoot[LE,RO]{\thepage}
 \else
 	\fancyhead[L]{\textsl{\leftmark}}
 	\fancyfoot[R]{\thepage} 
 \fi
-%\cfoot{}
 
-%Hace que la primera página de cada capítulo no tenga el header por defecto y que en el footer el N° de página no esté al centro
+%Hace que la primera página de cada capítulo no tenga el header por defecto y 
+% que en el footer el N° de página no esté al centro
 \fancypagestyle{plain}{%
     \fancyhf{} % clear all header and footer fields
     \if@twoside
@@ -182,21 +162,6 @@
 \decimalpoint
 % Headings
 \markboth{}{}
-
-% Renombre de los titulos por defecto
-% En teoría, solo son necesarias las tablas, pero
-% por si acaso
-\addto\captionsspanish
-{
-    \def\contentsname{Tabla de contenido}
-    \def\listtablename{Índice de tablas}
-    \def\listfigurename{Índice de ilustraciones}
-    \def\listalgorithmname{Índice de algoritmos}
-    \def\appendixname{Apéndice}
-    \def\tablename{Tabla}
-    \def\figurename{Figura}
-    \def\chaptername{Capítulo}
-}
 
 \renewcommand{\appendixname}{Apéndices}
 \renewcommand{\appendixtocname}{Apéndices}
@@ -291,6 +256,7 @@
 % País
 \DeclareRobustCommand*{\pais}[1]{\gdef\@pais{#1}}
 % La propuesta
+\gdef\@propuesta{}
 \DeclareRobustCommand*{\propuesta}[1]{\gdef\@propuesta{#1}}
 
 \renewcommand{\maketitle}{
