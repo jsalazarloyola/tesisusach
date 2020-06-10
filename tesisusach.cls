@@ -296,6 +296,7 @@
 \DeclareRobustCommand*{\unidad}[1]{\gdef\@unidad{#1}}
 % Nombre del profesor guía
 \DeclareRobustCommand*{\profesor}[1]{\gdef\@profesor{#1}}
+\DeclareRobustCommand*{\profesorco}[1]{\gdef\@profesorco{#1}}
 % Ciudad
 \DeclareRobustCommand*{\ciudad}[1]{\gdef\@ciudad{#1}}
 % País
@@ -340,7 +341,13 @@
 		\begin{minipage}{0.5\linewidth}
 			\begin{flushright}
 				\begin{tabular}{ll}
-				Profesor: & \@profesor
+				\ifdosguias{Profesores:}\else{Profesor:}\fi
+				&\ifdosguias
+					\@profesor \\
+					&\@profesorco
+				\else
+					\@profesor
+				\fi
 				\end{tabular}
 			\end{flushright}	
 			\par
