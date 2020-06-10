@@ -93,7 +93,7 @@
 
 %--------Apendice y tabla de contenidos
 \RequirePackage{appendix}
-\RequirePackage[nottoc]{tocbibind}
+\RequirePackage[nottoc,notlof,notlot]{tocbibind}
 
 %Soporte para tablas con color
 \RequirePackage[table,xcdraw]{xcolor}
