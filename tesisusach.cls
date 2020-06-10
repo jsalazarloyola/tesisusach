@@ -8,22 +8,10 @@
 % Víctor Flores
 \ProvidesClass{tesisusach}[2020/06/09 v1.4 Estilo para tesis (Javier Salazar Loyola)]
 
-\newif\ifkeys\keysfalse
-\newif\iftxfonts\txfontsfalse
 \newif\ifdosguias\dosguiasfalse
 \newif\iflogo\logofalse
 \newif\ifpropuesta\propuestafalse
-\newif\ifdoctorado\doctoradofalse
-\newif\ifmagister\magisterfalse
-\newif\ifcivil\civilfalse
-\newif\ifejecucion\ejecucionfalse
 
-\DeclareOption{keys}{\keystrue}
-\DeclareOption{doctorado}{\doctoradotrue}
-\DeclareOption{magister}{\magistertrue}
-\DeclareOption{civil}{\civiltrue}
-\DeclareOption{ejecucion}{\ejecuciontrue}
-\DeclareOption{txfonts}{\txfontstrue}
 \DeclareOption{dosguias}{\dosguiastrue}
 \DeclareOption{logo}{\logotrue}
 \DeclareOption{nologo}{\logofalse}
@@ -35,17 +23,6 @@
 %SI SE UTILIZA LETRA ARIAL, CAMBIAR ESTO
 \renewcommand{\rmdefault}{phv} % Arial
 \renewcommand{\sfdefault}{phv} % Arial
-
-%Load book using normal font size to 10pt
-\LoadClass[10pt,oneside,letterpaper]{book}
-%Cambiar oneside o twoside si se desea impresión por ambos lados
-
-%% Cambio el interlineado a 1.5:
-%\linespread{1.5}
-\renewcommand{\baselinestretch}{1.5}
-
-%%Hago que la mancha de página deje todo alineado hacia arriba
-\raggedbottom
 
 %%   Modificado desde `book.cls'.
 %%
@@ -60,6 +37,16 @@
 %%   8) Las Referencias aparezcan en Indice.
 %%   9) Indice General -> Indice
 %%   
+%Load book using normal font size to 10pt
+\LoadClass[10pt,oneside,letterpaper]{book}
+%Cambiar oneside o twoside si se desea impresión por ambos lados
+
+%% Cambio el interlineado a 1.5:
+%\linespread{1.5}
+\renewcommand{\baselinestretch}{1.5}
+
+%%Hago que la mancha de página deje todo alineado hacia arriba
+\raggedbottom
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% tesis.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %--------Margenes segun reglamento: izq=4cm y inf=der=sup=2.5cm
@@ -77,7 +64,6 @@
 \RequirePackage[spanish]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\ifkeys\RequirePackage[notref,notcite]{showkeys}\fi
 
 %--------Configuracion de header y footer
 \RequirePackage{fancybox}
@@ -90,7 +76,6 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
-\iftxfonts\RequirePackage{txfonts}\fi
 
 %-------Entornos, figuras
 \RequirePackage{enumerate}
