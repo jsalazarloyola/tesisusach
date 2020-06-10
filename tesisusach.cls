@@ -332,8 +332,12 @@
 			\textbf{\fontsize{10}{15}\selectfont Test subtitle}
 		\end{center}
 		
+		% Bloque de autores
 		\begin{center}
-			\textbf{\fontsize{10}{15}\selectfont\@author}
+			\bfseries
+			\begin{tabular}[t]{c}
+				\fontsize{10}{15}\selectfont\@author
+			\end{tabular}\par
 		\end{center}
 		
 		\vfill
