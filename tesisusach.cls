@@ -258,6 +258,11 @@
 % La propuesta
 \gdef\@propuesta{}
 \DeclareRobustCommand*{\propuesta}[1]{\gdef\@propuesta{#1}}
+% Si se pide logo diferente, se da el comando.
+% TODO: mejorar esto.
+\iflogo
+\DeclareRobustCommand{\logo}[1]{\gdef\@logo{#1}}
+\fi
 
 \renewcommand{\maketitle}{
 	\begin{titlepage}
@@ -276,7 +281,10 @@
 		\hfill
 		\begin{minipage}[c]{.25\linewidth}
 			\vspace{0pt}
-			\includegraphics[scale=.25]{./images/LogoUsach2.png}		
+			\iflogo\logo
+			\else
+				\includegraphics[scale=.25]{./images/LogoUsach2.png}
+			\fi
 		\end{minipage}
 		
 		\vfill
