@@ -373,7 +373,7 @@
 {
 	\thispagestyle{empty}
 	\chapter*{\centerline{Dedicatoria}}
-	\addcontentsline{toc}{chapter}{Dedicatoria}
+	%\addcontentsline{toc}{chapter}{Dedicatoria}
 }{}
 
 %------Página de agradecimientos
@@ -381,7 +381,7 @@
 {
     \thispagestyle{empty}
     \chapter*{\centerline{Agradecimientos}}
-    \addcontentsline{toc}{chapter}{Agradecimientos}
+    %\addcontentsline{toc}{chapter}{Agradecimientos}
 }
 {\clearpage}
 
@@ -394,7 +394,7 @@
 \newenvironment{resumenEs}
 {
 	\chapter*{\centerline{Resumen}}
-	\addcontentsline{toc}{chapter}{Resumen}
+	%\addcontentsline{toc}{chapter}{Resumen}
 }
 {
 	% Fuente más pequeña, en nueva línea
@@ -409,7 +409,7 @@
 \newenvironment{resumenEn}
 {
 	\chapter*{\centerline{Abstract}}
-	\addcontentsline{toc}{chapter}{Abstract}
+	%\addcontentsline{toc}{chapter}{Abstract}
 }
 {	
 	% Fuente más pequeña, en nueva línea
