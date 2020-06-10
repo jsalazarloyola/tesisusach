@@ -1,8 +1,8 @@
-# tesisUsach
+# tesisusach
 
 Intento de realizar un formato de tesis siguiendo los requerimientos de la USACH que funcione con pdflatex.
 
-Basado en el formato de [Emir Muñoz][https://github.com/emir-munoz/tesis-usach], con ediciones de a lo menos dos personas más, no todas reconocidas en la información del paquete que recibí.
+Basado en el formato de [Emir Muñoz](https://github.com/emir-munoz/tesis-usach), con ediciones de a lo menos dos personas más, no todas reconocidas en la información del paquete que recibí.
 
 Actualizado por **Javier Salazar Loyola** (javier dot salazar dot l at usach dot cl).
 
