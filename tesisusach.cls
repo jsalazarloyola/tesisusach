@@ -286,6 +286,10 @@
 %================================================================
 %- By Javier Salazar Loyola
 % Configuraciones de la página de título
+% Subtítulo
+\gdef\@subtitle{}
+\DeclareRobustCommand*{\subtitle}[1]{\gdef\@subtitle{#1}}
+
 % Declara la universidad (debería ser la USACH, pero por si acaso
 \gdef\@universidad{Universidad de Santiago de Chile}
 \DeclareRobustCommand*{\universidad}[1]{\gdef\@universidad{#1}}
@@ -329,7 +333,7 @@
 			% Espacio para título
 			\textbf{\fontsize{12}{18}\selectfont\MakeUppercase{\@title}}\\
 			% Espacio para subtítulo
-			\textbf{\fontsize{10}{15}\selectfont Test subtitle}
+			\textbf{\fontsize{10}{15}\selectfont\@subtitle}
 		\end{center}
 		
 		% Bloque de autores
@@ -366,203 +370,6 @@
 		
 	\end{titlepage}
 }
-%--------Comandos
-%\def\@title{}
-%\def\@autor{}
-%\def\@fecha{}
-%\def\@profesorguia{}
-%\def\@profesorcoguia{}
-%\def\@nombreuno{}
-%\def\@nombredos{}
-%\def\@nombretres{}
-%\def\@ciudad{}
-%\def\@pais{}
-%\def\@run{}
-%\def\@telefono{}
-%\def\@email{}
-%\newcommand{\keywords}[1]{\def\keywords{#1}}
-%\def\titulo#1{\gdef\@title{\begin{center}{\LARGE\bf#1}%
-%\end{center}}\gdef\@titleMay{\begin{center}{\fontsize{12}{18} \selectfont \bf#1}%
-%\end{center}}}
-%
-%\def\autor#1{\gdef\@autor{{\bfseries #1}}\gdef\@autorn{#1}}
-%\def\fecha#1#2#3#4{\gdef\@diasemana{#1}\gdef\@diaexamen{#2}\gdef\@mesexamen{#3}%
-%\gdef\@annoexamen{#4}\gdef\@fecha{#3, #4}}
-%\def\profesorguia#1{\gdef\@profesorguia{#1}}
-%\def\profesorcoguia#1{\gdef\@profesorcoguia{#1}}
-%\def\nombreuno#1{\gdef\@nombreuno{#1}}
-%\def\nombredos#1{\gdef\@nombredos{#1}}
-%\def\nombretres#1{\gdef\@nombretres{#1}}
-%\def\regular#1{\gdef\@regular{#1}}
-%\def\externo#1{\gdef\@externo{#1}}
-%\def\presidente#1{\gdef\@presidente{#1}}
-%\def\ciudad#1{\gdef\@ciudad{#1}}
-%\def\pais#1{\gdef\@pais{#1}}
-%\def\run#1{\gdef\@run{#1}}
-%\def\telefono#1{\gdef\@telefono{#1}}
-%\def\email#1{\gdef\@email{#1}}
-%
-%%--------Información del documento PDF
-%\hypersetup
-%{
-%    bookmarksopen, bookmarksnumbered, pdfdisplaydoctitle=true,
-%    pdftitle=\@title,
-%    pdfauthor=\@autor,
-%    pdfsubject=Tesis de grado,
-%    pdfkeywords=,
-%    pdfcreator=Universidad de Santiago de Chile,
-%    %pdfproducer=Emir Mu\~noz and Víctor Flores,
-%    colorlinks=true,
-%    % linkcolor=red,
-%    % citecolor=green,
-%    % filecolor=magenta,
-%    % urlcolor=cyan,
-%    linkcolor=black,
-%    citecolor=black,
-%    filecolor=black,
-%    urlcolor=black,
-%    linkbordercolor={1 0 0},
-%    citebordercolor={0 1 0}
-%}
-%
-%\newsavebox{\GradoTesis}
-%\newsavebox{\Gradotesis}
-%\newsavebox{\GradoOtorgado}
-%\newsavebox{\GradoOtorgadoTapa}
-%
-%\ifdoctorado\savebox{\GradoTesis}{DOCTORADO}
-%            \savebox{\Gradotesis}{Doctorado}
-%            \savebox{\GradoOtorgado}{Doctor en Ciencias de la Computaci\'on}
-%            \savebox{\GradoOtorgadoTapa}{\large Doctor en Ciencias de la Computaci\'on}
-%\else\savebox{\GradoTesis}{MAGÍSTER}
-%       \savebox{\Gradotesis}{Magíster}
-%       \savebox{\GradoOtorgado}{Magíster en Ingeniería Informática}
-%       \savebox{\GradoOtorgadoTapa}{\large Magíster en Ingeniería Informática} %\large
-%\fi
-%
-%%-------Cubierta
-%% by Emir
-%\newcommand{\makecubierta}
-%{
-%\iflogo
-%    \vspace*{1.5cm} %-1.0cm
-%    \begin{picture}(18,4)(0,40)
-%        \put(300,-7){\includegraphics[scale=.25]{./images/LogoUsach2.png}}
-%    \end{picture}
-%\fi
-%
-%\sloppy
-%\thispagestyle{empty}
-%\vspace*{-1.8cm} %-1.5cm
-%
-%\begin{center}
-%    {\hspace*{-0.5cm}\textbf{\fontsize{14}{16.8}\selectfont UNIVERSIDAD DE SANTIAGO DE CHILE}}\\
-%    {\hspace*{-0.5cm}\textbf{\fontsize{12}{14.4}\selectfont FACULTAD DE INGENIERÍA}}\\
-%    {\hspace*{-0.5cm}\textbf{\fontsize{12}{14.4}\selectfont Departamento de Ingeniería Informática}}\\
-%\end{center}
-%
-%\ifpropuesta % si se trata de la propuesta
-%    \vspace*{5cm}
-%    \@titleMay\par
-%    \vspace{1cm}
-%    \begin{center}
-%    \large
-%    \ifdoctorado
-%        Propuesta de Tesis para optar por el grado de Doctor en Ciencias de la Ingeniería con mención en Informática
-%    \fi
-%    \ifmagister
-%        Propuesta de Trabajo de Título para Magíster en Ingeniería Informática
-%    \fi
-%    \ifcivil
-%        Propuesta de Trabajo de Título para Ingeniería Civil Informática
-%    \fi
-%    \ifejecucion
-%        Propuesta de Trabajo de Título para Ingeniería en ejecución en Informática y Computación
-%    \fi
-%    \end{center}
-%    \vspace{2.5cm}
-%    \begin{flushright}
-%        \begin{tabular}[t]{l l}
-%            Nombre: & \@autor \\
-%            %Nombre 2: & \@nombredos \\
-%            %Nombre 3: & \@nombretres \\
-%            R.U.N.: & \@run \\
-%            %A\~no Ingreso: & \@annoingreso \\
-%            Teléfono: & \@telefono \\
-%            E-mail: & \@email \\
-%            \ifdosguias Profesores: \else Profesor: \fi &
-%            \ifdosguias
-%                {\normalfont \@profesorguia} \\ 
-%                & {\normalfont \@profesorcoguia} \\
-%            \else
-%                \@profesorguia \\
-%            \fi
-%        \end{tabular}
-%    \end{flushright}
-%    \begin{center}
-%        \vspace{1.5cm}
-%        \@diasemana, \@diaexamen\ de \@mesexamen\ de \@annoexamen
-%    \end{center}
-%\else % si se trata del documento final
-%    \vspace*{3.0cm} %cambiar esto si la portada se extiende y usa dos páginas
-%    \@titleMay\par
-%    \vspace{1cm}
-%    \large
-%        \begin{center}
-%        \vspace*{2cm}
-%        \iflogo
-%            {\textbf{\fontsize{10}{12} \selectfont{\@autor}}}\\[1cm]
-%        \else
-%            {\textbf{\fontsize{10}{12} \selectfont{\@autor}}}\\[1.5cm]
-%        \fi
-%
-%        %Datos profesor(es)
-%        \vspace*{2cm}
-%        \begin{flushleft}
-%        \normalsize
-%        \begin{flushright}
-%          Profesor guía: \fontsize{10}{12} \selectfont {\@profesorguia}\\
-%        \end{flushright}
-%        \ifdosguias
-%            \hspace{7cm} Profesor co-guía: \fontsize{10}{12} \selectfont{\@profesorcoguia}\\
-%        \fi
-%        \vspace{1cm}
-%        \hspace{9.5cm} Tesis de grado presentada en\\
-%        \hspace{9.5cm} conformidad a los requisitos para\\
-%        \ifdoctorado
-%            \hspace{9.5cm} obtener el grado de Doctor en\\
-%            \hspace{9.5cm} Ingeniería Informática\\
-%        \fi
-%        \ifmagister
-%            \hspace{9.5cm} obtener el grado de Magíster en \\
-%            \hspace{9.5cm} Ingeniería Informática\\
-%        \fi
-%        \ifcivil
-%            \hspace{9.5cm} obtener el título de Ingeniero \\
-%            \hspace{9.5cm} Civil en Informática\\
-%        \fi
-%        \ifejecucion
-%            \hspace{9.5cm} obtener el título de Ingeniero \\
-%            \hspace{9.5cm} Ejecución en Informática y Computación\\
-%        \fi
-%        \end{flushleft}
-%
-%        %\vspace*{3.5cm}
-%        \null
-%	\vfill
-%        \fontsize{10}{12} \selectfont{\@ciudad\ -- \@pais}\\
-%        \@annoexamen
-%        \end{center}\par
-%        \iflogo 
-%	  \vspace{.9cm}
-%	\else
-%	  \vspace{1cm}
-%	\fi
-%    
-%\fi
-%} %\\end \makecubierta
-%
-
 
 %-------Copyright
 % by Emir
@@ -667,6 +474,30 @@
 		\textbf{\Large GLOSARIO}
 	\end{center}
 }{}
+%---------------------------------------------
+%----------------------- Configuración del PDF
+\hypersetup
+{
+    bookmarksopen, bookmarksnumbered, pdfdisplaydoctitle=true,
+    pdftitle=\@title,
+    pdfauthor=\@author,
+    pdfsubject=Tesis de grado,
+    pdfkeywords=,
+    pdfcreator=Universidad de Santiago de Chile,
+    %pdfproducer=Emir Mu\~noz and Víctor Flores,
+    colorlinks=true,
+    % linkcolor=red,
+    % citecolor=green,
+    % filecolor=magenta,
+    % urlcolor=cyan,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=black,
+    linkbordercolor={1 0 0},
+    citebordercolor={0 1 0}
+}
+
 
 %--------Teoremas, definiciones, ejemplos, lemas, etc
 \newtheoremstyle{teorema}{\topsep}{\topsep}%
