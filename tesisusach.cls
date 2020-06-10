@@ -389,12 +389,8 @@
 % ABSTRACT
 %================================================================
 %------Página de resumen (castellano)
-% Caja para las palabras claves en castellano
-\newsavebox{\eskw}
-% Guardado de palabras clave
-\providecommand{\keywordsEs}[1]{
-	\savebox{\eskw}{#1}
-}
+% Palabras clave
+\DeclareRobustCommand*{\keywordsEs}[1]{\gdef\@keywordsEs{#1}}
 \newenvironment{resumenEs}
 {
 	\chapter*{\centerline{Resumen}}
@@ -404,16 +400,12 @@
 	% Fuente más pequeña, en nueva línea
 	% Las palabras clave van con el abstract
 	\small\par
-	\textbf{Palabras Claves: } \usebox{\eskw}
+	\textbf{Palabras Claves: } \@keywordsEs
 }
 
 %------Página de abstract (ingles)
-% Caja para las palabras claves en inglés
-\newsavebox{\enkw}
-% Guardado de palabras clave
-\providecommand{\keywordsEn}[1]{
-	\savebox{\enkw}{#1}
-}
+% Palabras clave
+\DeclareRobustCommand*{\keywordsEn}[1]{\gdef\@keywordsEn{#1}}
 \newenvironment{resumenEn}
 {
 	\chapter*{\centerline{Abstract}}
@@ -422,7 +414,7 @@
 {	
 	% Fuente más pequeña, en nueva línea
 	\small\par
-	\textbf{Keywords: } \usebox{\enkw}
+	\textbf{Keywords: } \@keywordsEn
 }
 
 %------Página de glosario
@@ -441,7 +433,7 @@
     pdftitle=\@title,
     pdfauthor=\@author,
     pdfsubject=Tesis de grado,
-    pdfkeywords=,
+    pdfkeywords=,%\@keywordsEs,
     pdfcreator=Universidad de Santiago de Chile,
     %pdfproducer=Emir Mu\~noz and Víctor Flores,
     colorlinks=true,
