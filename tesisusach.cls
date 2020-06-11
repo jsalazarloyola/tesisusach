@@ -210,6 +210,10 @@
 %================================================================
 % Apéndices, figuras y tablas
 %================================================================
+% Cambios de Javier.
+% Idea original para esta configuración sacada de
+% https://tex.stackexchange.com/questions/435684/how-to-include-appendix-names-in-toc
+%---- Coloca "Apéndice X" en la tabla de contenidos
 \newlength{\orgchapnumwidth}
 \setlength{\orgchapnumwidth}{\cftchapnumwidth}
 \g@addto@macro\appendix{
@@ -220,6 +224,8 @@
 	}
 }
 
+%---- Análogo a \appendix, pero para colocar anexos
+% Los añade a la tabla de contenidos como "Anexo X"
 \newcommand*{\annex}{
 	\renewcommand{\appendixname}{Anexo}
 	\setcounter{chapter}{0}
