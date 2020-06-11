@@ -210,11 +210,25 @@
 %================================================================
 % Apéndices, figuras y tablas
 %================================================================
+\newlength{\orgchapnumwidth}
+\setlength{\orgchapnumwidth}{\cftchapnumwidth}
 \g@addto@macro\appendix{
 	\addtocontents{toc}{
-		\addtolength{\protect\cftchapnumwidth}{\expandafter\widthof{\appendixname\space}}
+		\setlength{\cftchapnumwidth}{\orgchapnumwidth}
+		\addtolength{\protect\cftchapnumwidth}{\widthof{\appendixname\space}}
 		\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}
 	}
+}
+
+\newcommand*{\annex}{
+	\renewcommand{\appendixname}{Anexo}
+	\setcounter{chapter}{0}
+	\addtocontents{toc}{
+		\setlength{\cftchapnumwidth}{\orgchapnumwidth}
+		\addtolength{\protect\cftchapnumwidth}{\widthof{\appendixname\space}}
+		\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}
+	}
+	
 }
 
 %Se agrega la palabra 'Figura' al índice de figuras

@@ -74,7 +74,12 @@
 	\appendix
 	\include{appendix/01-addendum}
 
-		
-	\include{anexos/01-prueba}
+	\annex
+	% Por un bug del sistema, si el primer anexo está en un archivo aparte,
+	% debe ser incluido con \input, en lugar de \include
+	% La excepción a este caso es que después de \annex, se ponga una página
+	% en blanco.
+	\input{anexos/01-prueba}
+	\include{anexos/02-otro}
 	
 \end{document}
