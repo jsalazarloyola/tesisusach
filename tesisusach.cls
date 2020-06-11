@@ -60,6 +60,9 @@
 \setlength{\hoffset}{0.0cm}
 \setlength{\footskip}{20pt} %20
 
+%--------Utilidades
+\RequirePackage{calc}
+
 %--------Idioma
 % Español y escribiendo "tabla", en vez de "cuadro"
 \RequirePackage[spanish,es-tabla]{babel}
@@ -94,6 +97,7 @@
 %--------Apendice y tabla de contenidos
 \RequirePackage{appendix}
 \RequirePackage[nottoc,notlof,notlot]{tocbibind}
+\RequirePackage{tocloft}
 
 %Soporte para tablas con color
 \RequirePackage[table,xcdraw]{xcolor}
@@ -163,10 +167,6 @@
 % Headings
 \markboth{}{}
 
-\renewcommand{\appendixname}{Apéndices}
-\renewcommand{\appendixtocname}{Apéndices}
-\renewcommand{\appendixpagename}{Apéndices}
-
 %--------Header de los capitulos
 % by Emir
 \RequirePackage[compact]{titlesec}
@@ -206,7 +206,17 @@
 \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
 
-\RequirePackage{tocloft}
+
+%================================================================
+% Apéndices, figuras y tablas
+%================================================================
+\g@addto@macro\appendix{
+	\addtocontents{toc}{
+		\addtolength{\protect\cftchapnumwidth}{\expandafter\widthof{\appendixname\space}}
+		\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}
+	}
+}
+
 %Se agrega la palabra 'Figura' al índice de figuras
 \renewcommand{\cftfigfont}{Figura }
 %Lo mismo para el índice de tablas
