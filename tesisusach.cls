@@ -11,6 +11,7 @@
 \newif\ifdosguias\dosguiasfalse
 \newif\iflogo\logofalse
 \newif\ifpropuesta\propuestafalse
+\newif\ifcopyright\copyrightfalse
 
 % Parámetros por defecto
 \PassOptionsToClass{10pt,twoside,letterpaper}{book}
@@ -23,6 +24,8 @@
 \DeclareOption{nologo}{\logofalse}
 % Opción para incluir la propuesta en la portada
 \DeclareOption{propuesta}{\propuestatrue}
+% Opción para incluir el copyright
+\DeclareOption{copyright}{\copyrighttrue}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -75,6 +78,9 @@
 \RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+
+% Para algunos símbolos, como el de copyright
+\RequirePackage{textcomp}
 
 %--------Configuracion de header y footer
 \RequirePackage{fancybox}
@@ -316,6 +322,8 @@
 \iflogo
 \DeclareRobustCommand{\logo}[1]{\gdef\@logo{#1}}
 \fi
+% Información de Copyright
+\DeclareRobustCommand{\copyrightnotice}[1]{\gdef\@copyrightnotice{#1}}
 
 \renewcommand{\maketitle}{
 	\begin{titlepage}
@@ -381,29 +389,21 @@
 		\end{center}
 		
 	\end{titlepage}
-}
-
-%-------Copyright
-% by Emir
-\newcommand{\makecopyright}
-{
-    \ifpropuesta
-        % no va copyright
-    \else
-        %\thispagestyle{empty}
-        \null
-	\vfill\par
-        \begin{flushleft}
-    
-    		
-    		\copyright\ 
-            \@autor \; - \@annoexamen \\ 
-            \includegraphics[height=12pt]{images/licences/cc_by.png}
-				~$\bullet$~~ Algunos derechos reservados. Esta obra está bajo una Licencia Creative Commons Atribución-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.
-    
-    
-        \end{flushleft}
-    \fi
+	
+	\ifcopyright
+		{
+			% Limpiamos la página
+			\clearpage\null\vfill
+			\thispagestyle{empty}
+			\begin{minipage}[b]{0.8\textwidth}
+				\footnotesize
+				\setlength{\parskip}{0.5\baselineskip}
+				\noindent\@copyrightnotice
+			\end{minipage}
+			\vspace*{2\baselineskip}
+			\cleardoublepage
+		}
+	\fi
 }
 
 %================================================================
