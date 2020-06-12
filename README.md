@@ -23,3 +23,8 @@ Para usar el formato, copiar los archivos `tesisusach.cls` y `apa-good.bst` en l
 ```\documentclass{tesisusach}```
 
 Las opciones, hasta que logre documentarlas bien, son las mismas que las de la clase `book`, en la que se basa este formato. Ampliaré la documentación en el corto plazo.
+
+## Agradecimientos
+
+A Jacqueline Köhler, profesora del DIINF y estudiante de doctorado del mismo departamento, por servir de conejillo de indias y dar los comentarios necesarios para que esta cosa funcione bien.
+
