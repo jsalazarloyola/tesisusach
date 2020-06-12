@@ -12,9 +12,16 @@
 \newif\iflogo\logofalse
 \newif\ifpropuesta\propuestafalse
 
+% Parámetros por defecto
+\PassOptionsToClass{10pt,twoside,letterpaper}{book}
+
+% Opción para el caso de tener dos profesores guías
 \DeclareOption{dosguias}{\dosguiastrue}
+% Opción para incluir el logo desde una ubicación particular
+% (habilita el comando \logo)
 \DeclareOption{logo}{\logotrue}
 \DeclareOption{nologo}{\logofalse}
+% Opción para incluir la propuesta en la portada
 \DeclareOption{propuesta}{\propuestatrue}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -38,7 +45,7 @@
 %%   9) Indice General -> Indice
 %%   
 %Load book using normal font size to 10pt
-\LoadClass[10pt,oneside,letterpaper]{book}
+\LoadClass{book}
 %Cambiar oneside o twoside si se desea impresión por ambos lados
 
 %% Cambio el interlineado a 1.5:
