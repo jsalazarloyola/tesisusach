@@ -69,7 +69,6 @@
 
 %--------Utilidades
 \RequirePackage{calc}
-\RequirePackage{etoolbox}
 
 %--------Idioma
 % Español y escribiendo "tabla", en vez de "cuadro"
