@@ -75,7 +75,7 @@
 
 %--------Idioma
 % Español y escribiendo "tabla", en vez de "cuadro"
-\RequirePackage[spanish,es-tabla]{babel}
+\RequirePackage[english,spanish,es-tabla]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 
@@ -422,7 +422,7 @@
 
 % Formato estándar como el de agradecimientos, supongo que esto
 % es a gusto de cada quien.
-\newenvironment{pagDedicatoria}[1]
+\newenvironment{pagDedicatoria}
 {
 	\thispagestyle{empty}
 	\chapter*{\centerline{Dedicatoria}}
@@ -461,13 +461,15 @@
 \DeclareRobustCommand*{\keywordsEn}[1]{\gdef\@keywordsEn{#1}}
 \newenvironment{resumenEn}
 {
-	\chapter*{\centerline{Abstract}}
-	%\addcontentsline{toc}{chapter}{Abstract}
+	\begin{otherlanguage}{english}
+		\chapter*{\centerline{Abstract}}
+		%\addcontentsline{toc}{chapter}{Abstract}
 }
 {	
-	% Fuente más pequeña, en nueva línea
-	\small\par
-	\textbf{Keywords: } \@keywordsEn
+		% Fuente más pequeña, en nueva línea
+		\small\par
+		\textbf{Keywords: } \@keywordsEn
+	\end{otherlanguage}
 }
 
 %------Página de glosario
