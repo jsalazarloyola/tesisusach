@@ -138,7 +138,7 @@
 
 % Detalles idiomáticos
 \addto\captionsspanish{
-	\renewcommand{\contentsname}{Tabla de Contenidos}
+	\renewcommand{\contentsname}{Tabla de Contenido}
 }
 
 %================================================================
