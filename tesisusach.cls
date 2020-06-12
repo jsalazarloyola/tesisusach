@@ -136,6 +136,11 @@
 %Mostrar las subsubsecciones en el índice
 \setcounter{tocdepth}{3}
 
+% Detalles idiomáticos
+\addto\captionsspanish{
+	\renewcommand{\contentsname}{Tabla de Contenidos}
+}
+
 %================================================================
 % Notaciones Generales
 %================================================================
