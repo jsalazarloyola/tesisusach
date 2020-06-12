@@ -69,6 +69,7 @@
 
 %--------Utilidades
 \RequirePackage{calc}
+\RequirePackage{etoolbox}
 
 %--------Idioma
 % Español y escribiendo "tabla", en vez de "cuadro"
@@ -166,6 +167,22 @@
 }
 
 \pagestyle{fancy}
+% Páginas de cambio de capítulo en blanco completamente
+% Sacado del manual de fancyhdr, revisado el 11 de junio del 2020 
+% en http://ctan.dcc.uchile.cl/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+\renewcommand{\cleardoublepage}{
+	\clearpage
+	\if@twoside
+		\ifodd\c@page
+		\else
+			\hbox{}\vspace*{\fill}
+			\thispagestyle{empty}
+			\newpage
+			\if@twocolumn\hbox{}\newpage
+			\fi
+		\fi
+	\fi
+}
 
 % Cambios al default de spanish
 % Para desactivar el atajo ~N para la Ñ
