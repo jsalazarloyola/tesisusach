@@ -6,12 +6,12 @@ Basado en el formato de [Emir Muñoz](https://github.com/emir-munoz/tesis-usach)
 
 Actualizado por **Javier Salazar Loyola** (javier dot salazar dot l at usach dot cl).
 
-(Estoy eliminando todo lo innecesario o que es demasiado específico para un departamento específico, de modo que quede un modelo general para toda la universidad).
+(Estoy eliminando todo lo innecesario o que es demasiado específico para un departamento en particular, de modo que quede un modelo general para toda la universidad).
 
 ## TODO:
 * Documentar el código y sus funcionalidades.
 * Documentar las opciones de la clase.
-* Determinar si los entornos nuevos (teoremass) son necesarios o específicos para la tesis original.
+* Determinar si los entornos nuevos (teoremas) son necesarios o específicos para la tesis original.
 * Chequeo de errores, opciones cruzadas o cosas así.
 
 ## Mini manual de uso:
@@ -22,7 +22,7 @@ Para usar el formato, copiar los archivos `tesisusach.cls` y `apa-good.bst` en l
 
 ```\documentclass{tesisusach}```
 
-Las opciones, hasta que logre documentarlas bien, son las mismas que las de la clase `book`, en la que se basa este formato. Ampliaré la documentación en el corto plazo.
+Las opciones, hasta que logre documentarlas bien, son las mismas que las de la clase `book`, en la que se basa este formato. Ampliaré la documentación en el corto o mediano plazo.
 
 ### Algunas opciones de interés:
 
@@ -39,11 +39,11 @@ Las opciones, hasta que logre documentarlas bien, son las mismas que las de la c
 
 ## Requerimientos y configuraciones básicas
 
-La clase requiere paquetes básicos, pero entre otras cosas, carga babel configurado para idioma español, usar utf8 con inputenc yfuente T1. Además, carga el paquete textcomp, de moco que símbolos como `\textcopyright` están habilitados por defecto.
+La clase requiere paquetes básicos, pero entre otras cosas, carga `babel` configurado para idioma español, usar utf8 con `inputenc` y fuente T1. Además, carga el paquete `textcomp`, de modo que símbolos como `\textcopyright` están habilitados por defecto.
 
-Además, utiliza fancyhdr para los encabezados, enumerate para listas (por lo que se puede configurar la numeración sin recurrir a otros paquetes), graphicx, hyperref y multirow.
+Además, utiliza `fancyhdr` para los encabezados, enumerate para listas (por lo que se puede configurar la numeración sin recurrir a otros paquetes, usando, por ejemplo, `\begin{enumerate}[i.]`), `graphicx`, `hyperref` y `multirow`.
 
-Finalmente, debe decirse que la gestión bibliográfica se hace mediante BibLaTeX en formato APA, como pide la universidad, por lo que usa el backend biber para generar las referencias.
+Finalmente, debe decirse que la gestión bibliográfica se hace mediante BibLaTeX en formato APA, como pide la universidad, por lo que usa el backend `biber` para generar las referencias.
 
 ## Agradecimientos
 
